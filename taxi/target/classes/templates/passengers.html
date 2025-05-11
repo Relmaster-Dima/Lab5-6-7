@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Список пассажиров</title>
+    <style>
+        body { font-family:Arial,sans-serif; padding:2rem; background:#f9f9f9; }
+        h1 { margin-bottom:1rem; }
+        table { width:100%; border-collapse:collapse; background:#fff; box-shadow:0 2px 8px rgba(0,0,0,0.1); }
+        th, td { padding:.75rem; border:1px solid #ddd; text-align:left; }
+        th { background:#28a745; color:#fff; }
+    </style>
+</head>
+<body>
+<h1>Добро пожаловать, User!</h1>
+<table>
+    <thead>
+    <tr><th>ID</th><th>Имя</th><th>Email</th><!-- доп. колонки --></tr>
+    </thead>
+    <tbody>
+    <tr th:each="p : ${passengers}">
+        <td th:text="${p.id}">1</td>
+        <td th:text="${p.name}">Иванов</td>
+        <td th:text="${p.phoneNumber}">+7...</td>
+        <td th:text="${p.email}">ivanov@example.com</td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
